@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Custom scrollbar styles */
+textarea::-webkit-scrollbar {
+    width: 6px;
+}
+  
+textarea::-webkit-scrollbar-track {
+    background-color: rgb(2, 48, 21);
+}
+  
+textarea::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 3px;
+}
+
