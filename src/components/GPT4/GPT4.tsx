@@ -14,8 +14,8 @@ const GPT4 = () => {
     return (
         <div className="w-full min-h-screen overflow-auto  items-center justify-center text-gray-100 text-lg flex flex-col">
             <div className="flex-grow">
-                <div className="w-4/5 mx-auto border-4 border-green-900 rounded-md mb-12 mt-12">
-                    {convo.map((string, i) => (<div className={`flex flex-row ${i % 2 === 0 ? "bg-emerald-800": "bg-emerald-600"} shadow-md ${convo.length > i + 1 ? "border-b-2 border-green-900" : ""}`}>
+                <div className="w-4/5 mx-auto border-4 border-grey-100 rounded-md mb-12 mt-12">
+                    {convo.map((string, i) => (<div key={`${i}_GPT_DIV_KEY`} className={`flex flex-row ${i % 2 === 0 ? "bg-emerald-800": "bg-emerald-600"} shadow-md ${convo.length > i + 1 ? "border-b-2 border-gray-100" : ""}`}>
                         <img src={i % 2 === 0 ? userImage : gptImage} alt={i % 2 === 0 ? "user image" : "gpt image"}
                         className="w-14 h-14 p-1 rounded-lg"></img>
                         <div className="ml-10 mr-10 font-mono mt-3 mb-3 self-center">{string}</div>
@@ -23,7 +23,7 @@ const GPT4 = () => {
                 </div>
             </div>
             <MessageInput setBottomSpacing={setBottomSpacing} convo={convo} setConvo={setConvo}/>
-            <div className=" bottom-0 left-0 w-full bg-emerald-800" style={{height: `${bottomSpacing}px`}}></div>
+            <div className=" bottom-0 left-0 w-full bg-emerald-800 border-t-2 border-white" style={{height: `${bottomSpacing}px`}}></div>
         </div>
     )
 }

@@ -8,16 +8,24 @@ body {
     max-width: 100%;
 }
 
-/* Custom scrollbar styles */
-textarea::-webkit-scrollbar {
+
+::-webkit-scrollbar {
     width: 6px;
 }
   
+::-webkit-scrollbar-track {
+    background-color: #065f46;
+}
+#config-main::-webkit-scrollbar-track {
+    background-color: #065f46;
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+}
 textarea::-webkit-scrollbar-track {
     background-color: rgba(255, 255, 255, 0.183);
 }
   
-textarea::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #d1d5db;
     border-radius: 3px;
 }

@@ -1,16 +1,24 @@
 import { useState } from 'react'
+import Configure from '../Configure/Configure'
 
 import robotLogo from '../../images/icons8-robot-50.png'
+import Settings from '../../Classes/Settings'
 
-const TopBar = ({}) => {
+interface TopBarProps {
+    settings: Settings
+    setSettings: React.Dispatch<React.SetStateAction<Settings>>
+}
+
+const TopBar: React.FC<TopBarProps> = ({settings, setSettings}) => {
     const [isMenuOpen, setIsMenueOpen] = useState<boolean>(false)
+    const [isConfig, setIsConfig] = useState<boolean>(false)
 
     const toggleMenu = () => {
         setIsMenueOpen(!isMenuOpen)
     }
 
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-emerald-800 p-6">
+        <nav className="flex items-center justify-between flex-wrap bg-emerald-800 p-6 border-b-2 border-white">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <img src={robotLogo} className="fill-current h-8 w-8 mr-2"/>
                 <span className="font-semibold text-xl tracking-tight">My GPT</span>
@@ -33,9 +41,10 @@ const TopBar = ({}) => {
                     </a>
                 </div>
                 <div>
-                    <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-emerald-800 hover:bg-white mt-4 lg:mt-0">Configure</button>
+                    <button onClick={()=>setIsConfig(true)}className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-emerald-800 hover:bg-white mt-4 lg:mt-0">Configure</button>
                 </div>
             </div>
+            <Configure settings={settings} setIsConfig={setIsConfig} setSettings={setSettings} isConfig={isConfig} />
         </nav>
     )
 }

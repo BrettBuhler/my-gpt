@@ -1,3 +1,22 @@
-.app-main {
-    background-color: aqua;
+body {
+    background: radial-gradient(
+        circle at top left,
+        #000000 0%,
+        #111111 10%,
+        #000000 20%,
+        #222222 30%,
+        #000000 40%,
+        #333333 50%,
+        #000000 60%,
+        #444444 70%,
+        #000000 80%,
+        #555555 90%,
+        #000000 100%
+      );
+}
+
+
+.custom-max-height{
+    max-height: 90%;
+    overflow-y: auto;
 }
