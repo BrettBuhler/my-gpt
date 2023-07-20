@@ -8,7 +8,7 @@ const App = () => {
     return (
         <div className="app-main max-h-screen">
             <TopBar settings={settings} setSettings={setSettings}/>
-            <GPT4 />
+            <GPT4 settings={settings}/>
         </div>
     )
 }

@@ -5,24 +5,33 @@ interface MessageInputProps {
     convo: string[]
     setConvo: React.Dispatch<React.SetStateAction<string[]>>
     setBottomSpacing: React.Dispatch<React.SetStateAction<number>>
+    handleChat: () => void
 }
 
-const MessageInput: React.FC<MessageInputProps> = ({setBottomSpacing, convo, setConvo}) => {
+const MessageInput: React.FC<MessageInputProps> = ({setBottomSpacing, convo, setConvo, handleChat}) => {
     const [userInput, setUserInput] = useState<string>("")
     const [isInputFocused, setIsInputFocused] = useState<boolean>(false)
     const [hasScroll, setHasScroll] = useState<boolean>(false)
+    const [sendChat, setSendChat] = useState<boolean>(false)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+    useEffect(()=> {
+        if (sendChat){
+            handleChat()
+            setSendChat(false)
+        }
+    },[sendChat])
 
     const handleUserInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setUserInput(event.target.value)
-  }
+    }
 
     const handleSend = () => {
         const tempConvo = [...convo]
         tempConvo.push(userInput)
-        tempConvo.push("THIS IS A TEST RESPONSE")
         setConvo(tempConvo)
         setUserInput("")
+        setSendChat(true)
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
