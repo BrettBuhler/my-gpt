@@ -7,15 +7,25 @@ import Settings from '../../Classes/Settings'
 interface TopBarProps {
     settings: Settings
     setSettings: React.Dispatch<React.SetStateAction<Settings>>
+    setClearChat: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const TopBar: React.FC<TopBarProps> = ({settings, setSettings}) => {
+const TopBar: React.FC<TopBarProps> = ({settings, setSettings, setClearChat}) => {
     const [isMenuOpen, setIsMenueOpen] = useState<boolean>(false)
     const [isConfig, setIsConfig] = useState<boolean>(false)
 
     const toggleMenu = () => {
         setIsMenueOpen(!isMenuOpen)
     }
+
+    const resetConfig = () => {
+        const newSettings = new Settings("gpt-3.5-turbo")
+        setSettings(newSettings)
+    }
+
+    const clearChat = () => [
+        setClearChat(true)
+    ]
 
     return (
         <nav className="flex items-center justify-between flex-wrap bg-emerald-800 p-6 border-b-2 border-white">
@@ -30,15 +40,15 @@ const TopBar: React.FC<TopBarProps> = ({settings, setSettings}) => {
             </div>
             <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isMenuOpen ? 'block' : 'hidden'}`}>
                 <div className="text-sm lg:flex-grow">
-                    <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    <a href="https://github.com/BrettBuhler/my-gpt" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                         Docs
                     </a>
-                    <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                        Examples
-                    </a>
-                    <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-                        Blog
-                    </a>
+                    <button onClick={clearChat} className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        Clear Chat
+                    </button>
+                    <button onClick={resetConfig} className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+                        Reset Configuration
+                    </button>
                 </div>
                 <div>
                     <button onClick={()=>setIsConfig(true)}className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-emerald-800 hover:bg-white mt-4 lg:mt-0">Configure</button>

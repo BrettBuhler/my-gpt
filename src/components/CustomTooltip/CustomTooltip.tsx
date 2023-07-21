@@ -1,31 +1,28 @@
-import React from "react"
-import { useState } from "react";
+import React from 'react';
 
 interface CustomTooltipProps {
-    text: string;
-    position?: "top" | "right" | "bottom" | "left"
+  text: string;
+  position: { x: number; y: number };
 }
 
-const CustomTooltip: React.FC<CustomTooltipProps> = ({ text, position = "top" }) => {
-    const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
-
-    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-        const rect = event.currentTarget.getBoundingClientRect()
-        const x = event.clientX - rect.left
-        const y = event.clientY - rect.top
-        setTooltipPosition({ x, y })
-    }
-
-    const tooltipStyle = {
-        top: tooltipPosition.y + "px",
-        left: tooltipPosition.x + "px",
-    }
-
-    return (
-        <div className={`tooltip tooltip-${position}`} onMouseMove={handleMouseMove}>
-        <span className="absolute" style={tooltipStyle}>{text}</span>
-        </div>
-    )
-}
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ text, position }) => {
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        left: position.x - 180,
+        top: position.y - 30,
+        background: '#022c22',
+        color: 'white',
+        padding: '8px',
+        borderRadius: '4px',
+        fontSize: '14px',
+        width: '150px',
+      }}
+    >
+      {text}
+    </div>
+  );
+};
 
 export default CustomTooltip;
