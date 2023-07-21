@@ -135,42 +135,42 @@ const Configure: React.FC<ConfigureProps> = ({settings, setSettings, isConfig, s
                     <ModelSelect model={model} setModel={setModel}/>
                 </div>
                 <div className="mt-2">
-                    <div className="font-semibold" id="max_len" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsMaxLenTooltip(false)}>Max Length:</div>
+                    <div className="font-semibold w-fit hover:cursor-pointer" id="max_len" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsMaxLenTooltip(false)}>Max Length:</div>
                     {IsMaxLenTooltip && (
                         <CustomTooltip text="The maximum number of tokens to generate. Requests can use up to 2,048 or 4,000 tokens shared between prompt and completion. The exact limit varies by model. One token is roughly 4 characters for normal English text." position={tooltipPosition}/>
                     )}
                     <SliderSelect min={1} max={maxLen} value={maxLength} setValue={setMaxLength} isInt={true}/>
                 </div>
                 <div className="mt-2">
-                    <div className="font-semibold" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsTempTooltip(false)} id="temp">Temperature:</div>
+                    <div className="font-semibold w-fit hover:cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsTempTooltip(false)} id="temp">Temperature:</div>
                     {isTempTooltip && (
                         <CustomTooltip text="Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive." position={tooltipPosition}/>
                     )}
                     <SliderSelect min={0} max={2} value={temp} setValue={setTemp}/>
                 </div>
                 <div className="mt-2">
-                    <div className="font-semibold mb-2" id="stop_seq" onMouseEnter={handleMouseEnter} onMouseLeave={() => setIsStopSeqTooltip(false)}>Stop Sequences:</div>
+                    <div className="font-semibold mb-2 w-fit hover:cursor-pointer" id="stop_seq" onMouseEnter={handleMouseEnter} onMouseLeave={() => setIsStopSeqTooltip(false)}>Stop Sequences:</div>
                     {isStopSeqTooltip && (
                         <CustomTooltip text="Up to four sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence." position={tooltipPosition} />
                     )}
                     <ItemInput items={stopSeq} setItems={setStopSeq}/>
                 </div>
                 <div className="mt-2">
-                    <div className="font-semibold mb-2" id="top_p" onMouseEnter={handleMouseEnter} onMouseLeave={() => setIsTopPTooltip(false)}>Top P:</div>
+                    <div className="font-semibold mb-2 w-fit hover:cursor-pointer" id="top_p" onMouseEnter={handleMouseEnter} onMouseLeave={() => setIsTopPTooltip(false)}>Top P:</div>
                     {isTopPTooltip && (
                         <CustomTooltip text="Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are considered." position={tooltipPosition}/>
                     )}
                     <SliderSelect min={0} max={1} value={topP} setValue={setTopP}/>
                 </div>
                 <div>
-                    <div className="font-semibold mb-2" id="freq_pen" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsFreqPenTooltip(false)}>Frequency Penalty:</div>
+                    <div className="font-semibold mb-2 w-fit hover:cursor-pointer" id="freq_pen" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsFreqPenTooltip(false)}>Frequency Penalty:</div>
                     {isFreqPenTooltip && (
                         <CustomTooltip text="How much to penalize new tokens based on their existing frequency in the text so far. Decreases the model's likelihood to repeat the same line verbatim." position={tooltipPosition} />
                     )}
                     <SliderSelect min={0} max={2} value={freqPen} setValue={setFreqPen}/>
                 </div>
                 <div>
-                    <div className="font-semibold mb-2" id="pres_pen" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsPresPenTooltip(false)}>Presence Penalty:</div>
+                    <div className="font-semibold mb-2 w-fit hover:cursor-pointer" id="pres_pen" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsPresPenTooltip(false)}>Presence Penalty:</div>
                     {isPresPenTooltip && (
                         <CustomTooltip text="How much to penalize new tokens based on whether they apear in the text so far. Increases the model's likelihood to talk about new topics." position={tooltipPosition} />
                     )}

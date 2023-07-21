@@ -26,7 +26,7 @@ const RememberChatHistory: React.FC<RememberChatHistoryProps> = ({ rememberHisto
 
 	return (
 		<div className="flex items-center justify-between">
-			<label id="rem_his"htmlFor="rememberCheckbox" className="mr-2 font-semibold" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsRememberHistoryTooltip(false)}>
+			<label id="rem_his"htmlFor="rememberCheckbox" className="mr-2 font-semibold hover:cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsRememberHistoryTooltip(false)}>
 				Remember Chat History:
 			</label>
 			{isRememberHistoryTooltip && (

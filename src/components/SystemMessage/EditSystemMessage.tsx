@@ -29,7 +29,7 @@ const EditSystemMessage: React.FC<EditSystemMessageProps> = ({ sysmsg, setSysmsg
 
     return (
         <div className="flex items-center justify-between">
-            <div id="sys_msg" className="font-semibold mt-2" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsSystemMessageTooltip(false)}>System Message:</div>
+            <div id="sys_msg" className="font-semibold mt-2 hover:cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={()=>setIsSystemMessageTooltip(false)} onClick={handleClick}>System Message:</div>
             {isSystemMessageTooltip && (
                 <CustomTooltip text="By adding a system message, you can instruct the model on how to shape its response or provide context for the conversation. This helps in fine-tuning the model's output to align it with your specific requirements." position={adjustPosition(tooltipPosition.x, tooltipPosition.y)} />
             )}
