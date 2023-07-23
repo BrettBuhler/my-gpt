@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# My GPT - README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to My GPT, a powerful and user-friendly application built with React and TypeScript, harnessing the capabilities of OpenAI's virtual sandbox to bring you an incredible experience!
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **No-Code Request Parameters:** My GPT allows developers to easily change request parameters for OpenAI API calls without writing any code. This functionality streamlines the testing and perfecting of API calls, making it convenient for developers to experiment with different configurations.
 
-### `npm start`
+- **Full-Stack React Application:** My GPT is a full-stack React application, incorporating both front-end and back-end components. It provides a seamless and responsive user interface to interact with OpenAI's virtual sandbox.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **TypeScript Powered:** The project is built with TypeScript, enabling type checking and improving code maintainability. TypeScript helps prevent potential bugs and provides enhanced development capabilities.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Hosted on Google Cloud Platform:** My GPT is hosted on the reliable Google Cloud Platform, ensuring scalability, performance, and availability for users.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run My GPT on your local machine, you'll need to follow these simple steps:
 
-### `npm run build`
+1. Clone the backend repository from [Backend Repository](https://github.com/BrettBuhler/my-gpt-backend).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Create a `.env` file in the root directory of this project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. In the `.env` file, add your OpenAI API key as follows:
+OPEN_AI_API=YOUR_OPENAI_API_KEY
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Install the necessary dependencies by running:
+npm install
 
-### `npm run eject`
+5. Start the project by running:
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+6. Open your web browser and navigate to `http://localhost:3000` to access My GPT.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+With My GPT, you can experience the full potential of OpenAI's virtual sandbox, all through a user-friendly interface inspired by ChatGPT. The application allows you to interact and explore the capabilities of GPT-3.5, making it an exciting tool for various creative and practical purposes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
+We welcome contributions from the community to make My GPT even better! If you have any bug fixes, feature requests, or improvements, feel free to open an issue or submit a pull request in the respective repositories.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it in accordance with the terms of the license.
+
+## Acknowledgments
+
+We would like to express our gratitude to the developers and contributors of the technologies and libraries used in this project, as without their efforts, this application would not have been possible.
+
+Thank you for choosing My GPT! We hope you enjoy using it as much as we enjoyed creating it. If you have any questions or need any assistance, don't hesitate to reach out. Happy GPT-ing!
