@@ -39,6 +39,8 @@ const Configure: React.FC<ConfigureProps> = ({settings, setSettings, isConfig, s
 
     const getMaxLen = (model: string): number => {
         switch (model){
+            case "gpt-4":
+                return 4000
             case "gpt-3.5-turbo-16k":
                 return 16000
             case "gpt-3.5-turbo-16k-0613":
